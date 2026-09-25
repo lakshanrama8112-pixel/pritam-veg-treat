@@ -1,0 +1,246 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">  
+<title>Pritam Veg Treat — Pure Vegetarian, Malad</title>  
+<link rel="preconnect" href="https://fonts.googleapis.com">  
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">  
+<style>  
+  :root{  
+    --ink:#1C2B1F;  
+    --green:#2F6B45;  
+    --green-dark:#1E4630;  
+    --turmeric:#E3A22B;  
+    --turmeric-light:#F1C777;  
+    --cream:#FBF6EA;  
+    --paper:#F3ECD8;  
+    --line:rgba(28,43,31,0.15);  
+    padding-top:env(safe-area-inset-top,0px);  
+    padding-bottom:env(safe-area-inset-bottom,0px);  
+  }  
+  *{box-sizing:border-box;}  
+  html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px);}  
+  body{margin:0; background:var(--cream); color:var(--ink); font-family:'Karla',sans-serif; line-height:1.6;}  
+  h1,h2,h3{font-family:'DM Serif Display',serif; font-weight:400; margin:0;}  
+  a{color:inherit;}  
+  .wrap{max-width:920px; margin:0 auto; padding:0 22px;}  nav{position:sticky; top:0; z-index:30; background:var(--cream); border-bottom:1px solid var(--line); padding-top:env(safe-area-inset-top,0px);}
+.navrow{max-width:920px; margin:0 auto; padding:16px 22px; display:flex; justify-content:space-between; align-items:center;}
+.brand{font-family:'DM Serif Display',serif; font-size:1.15rem;}
+.brand .leaf-dot{color:var(--green);}
+.navlinks{display:flex; gap:24px; font-size:0.9rem;}
+.navlinks a{text-decoration:none; border-bottom:1px solid transparent;}
+.navlinks a:hover{border-color:var(--green);}
+@media (max-width:600px){.navlinks{display:none;}}
+
+/* HERO */
+.hero{padding:56px 22px 40px;}
+.hero-grid{max-width:920px; margin:0 auto; display:grid; grid-template-columns:1.15fr 0.85fr; gap:36px; align-items:center;}
+@media (max-width:760px){.hero-grid{grid-template-columns:1fr;}}
+.pure-tag{
+display:inline-flex; align-items:center; gap:8px; background:var(--green); color:var(--cream);
+padding:7px 14px; border-radius:3px; font-size:0.82rem; font-weight:600; margin-bottom:22px;
+}
+.pure-tag .dotmark{width:9px; height:9px; border:1.5px solid var(--cream); border-radius:2px; position:relative;}
+.pure-tag .dotmark::after{content:"";position:absolute;inset:1.5px;border-radius:50%;background:var(--cream);}
+.hero h1{font-size:clamp(2.3rem,6vw,3.3rem); line-height:1.08; color:var(--green-dark);}
+.hero h1 i{color:var(--turmeric); font-style:italic;}
+.hero p.lede{margin-top:18px; max-width:46ch; font-size:1.05rem; color:#3B4C3E;}
+.hero-cta{margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;}
+.btn{display:inline-block; padding:13px 24px; border-radius:2px; font-size:0.94rem; font-weight:600; text-decoration:none; cursor:pointer;}
+.btn-primary{background:var(--green-dark); color:var(--cream);}
+.btn-primary:hover{background:var(--green);}
+.btn-outline{border:1.5px solid var(--green-dark); color:var(--green-dark);}
+.btn-outline:hover{background:var(--paper);}
+.factline{margin-top:26px; font-size:0.86rem; color:#5C6B5E;}
+
+/* leaf plate graphic */
+.plate{position:relative; width:100%; aspect-ratio:1/1; max-width:320px; margin:0 auto;}
+.leaf{
+position:absolute; inset:0; background:var(--green);
+border-radius:0% 60% 0% 60% / 0% 60% 0% 60%;
+transform:rotate(-8deg);
+}
+.leaf::before{
+content:""; position:absolute; inset:14%; border:1.5px solid rgba(251,246,234,0.55);
+border-radius:0% 60% 0% 60% / 0% 60% 0% 60%;
+}
+.seed{position:absolute; width:7px; height:7px; background:var(--turmeric); border-radius:50%;}
+
+/* ABOUT */
+.about{padding:44px 22px 10px;}
+.about-inner{max-width:640px; margin:0 auto; text-align:left;}
+.kicker{color:var(--green); font-weight:700; font-size:0.85rem; text-transform:none; margin-bottom:8px;}
+.about h2{font-size:clamp(1.6rem,4vw,2.1rem); color:var(--green-dark);}
+.about p{color:#3B4C3E; margin-top:14px;}
+.badges{display:flex; flex-wrap:wrap; gap:9px; margin-top:20px;}
+.badge{background:var(--paper); border:1px solid var(--line); border-radius:999px; padding:7px 14px; font-size:0.83rem; color:#3B4C3E;}
+
+/* MENU — course accordion */
+.menu{padding:56px 22px 64px;}
+.menu .section-head{max-width:640px; margin-bottom:36px;}
+.courses{border-top:1px solid var(--line);}
+details.course{border-bottom:1px solid var(--line);}
+details.course summary{
+list-style:none; cursor:pointer; display:flex; align-items:baseline; gap:18px;
+padding:20px 0; font-family:'DM Serif Display',serif; font-size:1.25rem; color:var(--green-dark);
+}
+details.course summary::-webkit-details-marker{display:none;}
+.course-num{font-family:'Karla',sans-serif; font-weight:700; font-size:0.8rem; color:var(--turmeric); flex:0 0 auto; padding-top:5px;}
+.course-title{flex:1;}
+.course-arrow{font-family:'Karla'; font-size:1rem; color:var(--green); transition:transform 0.2s ease; flex:0 0 auto;}
+details.course[open] .course-arrow{transform:rotate(45deg);}
+.course-body{padding:0 0 22px 0;}
+.dish-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 28px;}
+@media (max-width:600px){.dish-grid{grid-template-columns:1fr;}}
+.dish{display:flex; justify-content:space-between; gap:14px; padding:9px 0; border-bottom:1px dashed var(--line); font-size:0.96rem;}
+.dish .price{font-weight:600; color:var(--green-dark); white-space:nowrap;}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} .course-arrow{transition:none;} }
+
+/* VISIT */
+.visit{background:var(--green-dark); color:var(--cream); padding:56px 22px;}
+.visit-grid{max-width:920px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+@media (max-width:720px){.visit-grid{grid-template-columns:1fr;}}
+.visit h2{color:var(--cream); font-size:clamp(1.5rem,4vw,2rem); margin-bottom:28px; grid-column:1/-1;}
+.visit-card h3{font-family:'Karla'; font-size:0.85rem; font-weight:700; color:var(--turmeric-light); margin-bottom:8px;}
+.visit-card p{margin:0; font-size:0.94rem; color:#DCE6DD;}
+.visit-card a{color:var(--turmeric-light); text-decoration:underline;}
+
+footer{padding:26px 22px calc(26px + env(safe-area-inset-bottom,0px)); text-align:center; font-size:0.82rem; color:#5C6B5E;}
+</style>
+
+</head>  
+<body>  <nav>  
+  <div class="navrow">  
+    <div class="brand">Pritam <span class="leaf-dot">Veg</span> Treat</div>  
+    <div class="navlinks">  
+      <a href="#menu">Menu</a>  
+      <a href="#about">About</a>  
+      <a href="#visit">Visit</a>  
+    </div>  
+  </div>  
+</nav>  <header class="hero">  
+  <div class="hero-grid">  
+    <div>  
+      <div class="pure-tag"><span class="dotmark"></span>100% Pure Vegetarian Kitchen</div>  
+      <h1>Pure vegetarian.<br>Proudly <i>bold</i>.</h1>  
+      <p class="lede">Every dish on this menu, from breakfast poori to midnight paneer, is vegetarian — cooked fresh in a kitchen off the Western Express Highway in Malad.</p>  
+      <div class="hero-cta">  
+        <a class="btn btn-primary" href="#menu">Browse the menu</a>  
+        <a class="btn btn-outline" href="tel:08097078404" target="_top" rel="noopener">Call 080970 78404</a>  
+      </div>  
+      <div class="factline">Open daily · closes 12 am · ₹200–400 for two</div>  
+    </div>  
+    <div class="plate">  
+      <div class="leaf"></div>  
+    </div>  
+  </div>  
+</header>  <section class="about" id="about">  
+  <div class="about-inner">  
+    <div class="kicker">The kitchen</div>  
+    <h2>A pure-veg table for the neighbourhood</h2>  
+    <p>Corner seating under a covered roof, an air-conditioned room when Mumbai gets warm, and a kitchen that never reaches for meat, fish or egg — just paneer, dal, vegetables and rice done properly. Staff keep tables moving fast without rushing you.</p>  
+    <div class="badges">  
+      <div class="badge">Free street parking</div>  
+      <div class="badge">Good for groups</div>  
+      <div class="badge">Accepts reservations</div>  
+      <div class="badge">Good for kids</div>  
+    </div>  
+  </div>  
+</section>  <section class="menu" id="menu">  
+  <div class="wrap">  
+    <div class="section-head">  
+      <div class="kicker">How the meal runs</div>  
+      <h2>Eight courses, all vegetarian</h2>  
+    </div>  
+    <div class="courses" id="courses"></div>  
+  </div>  
+</section>  <section class="visit" id="visit">  
+  <div class="visit-grid">  
+    <h2>Find us &amp; book a table</h2>  
+    <div class="visit-card">  
+      <h3>Address</h3>  
+      <p>1-A, General Arun Kumar Vaidya Marg, Suchi Dham, Yashodham, Goregaon East, Mumbai 400097 — 200m off the WE Highway.</p>  
+    </div>  
+    <div class="visit-card">  
+      <h3>Hours &amp; contact</h3>  
+      <p>Open daily, closes 12 am.<br><a href="tel:08097078404" target="_top" rel="noopener">080970 78404</a></p>  
+    </div>  
+    <div class="visit-card">  
+      <h3>Good to know</h3>  
+      <p>Card &amp; NFC payments accepted. Casual, trendy, popular with students and groups.</p>  
+    </div>  
+  </div>  
+</section>  <footer>Pritam Veg Treat · Yashodham, Goregaon East · Mumbai 400097</footer>  <script>  
+  const courses = [  
+    { title:"To Begin — Salads &amp; Raita", items:[  
+      ["Kachumber Salad",80],["Green Mix Salad",60],["Dahi Boondi Raita",85],  
+      ["Jeera Raita",90],["Onion &amp; Green Chillies",20],["Masala Papad",60]  
+    ]},  
+    { title:"Starters", items:[  
+      ["Vegetable Cutlets",220],["Cheese Fingers",160],["Paneer Pakoda",160],  
+      ["Spring Rolls",250],["Cheese Cocktail Kebab",240],["Paneer Tikka",160],  
+      ["Veg Seekh Kebab",160],["Mushroom Tikka",200]  
+    ]},  
+    { title:"Soup", items:[  
+      ["Cream Of Tomato",60],["Manchow Soup",80],["Clear Veg Soup",80],  
+      ["Cream Of Mushroom",60],["Sweet Corn",80]  
+    ]},  
+    { title:"From the Tandoor &amp; Tawa", items:[  
+      ["Naan Butter",40],["Naan Garlic",40],["Laccha Paratha",40],  
+      ["Paneer Stuffed Paratha",60],["Roti Butter",20],["Paratha Aloo",65]  
+    ]},  
+    { title:"Curries — Paneer, Vegetables &amp; Dal", items:[  
+      ["Paneer Butter Masala",180],["Shahi Paneer",130],["Kadai Paneer",140],  
+      ["Palak Paneer",100],["Kashmiri Dum Aloo",140],["Mushroom Korma",180],  
+      ["Dal Mix Tarka",100],["Rajma",90],["Matar Paneer",110],["Chana Masala",90]  
+    ]},  
+    { title:"Rice, Noodles &amp; Thali", items:[  
+      ["Veg Biryani",180],["Paneer Pulao",200],["Jeera Rice",80],  
+      ["Veg Fried Rice",160],["Manchurian Gravy",180],["Cheese Chilli Dry",240],  
+      ["Standard Thali",150],["Deluxe Thali",200]  
+    ]},  
+    { title:"Morning Menu", items:[  
+      ["Poori Bhaji",100],["Chana Bhature",100],["Paratha Paneer",90],  
+      ["Toast Butter",100],["Cheese Sandwich",100],["Veg Sandwich (Cold)",80]  
+    ]},  
+    { title:"Drinks &amp; Something Sweet", items:[  
+      ["Cold Coffee",100],["Lassi Sweet",50],["Fresh Lime Soda",50],  
+      ["Milk Shake Mango",130],["Ginger Tea",30],["Gulab Jamun (Two)",50],  
+      ["Gajar Halwa",60],["Ice Cream Kesar",60]  
+    ]}  
+  ];  
+  
+  const wrap = document.getElementById('courses');  
+  courses.forEach((c, i) => {  
+    const num = String(i+1).padStart(2,'0');  
+    const det = document.createElement('details');  
+    det.className = 'course';  
+    if (i === 0) det.open = true;  
+    const dishesHTML = c.items.map(([n,p]) =>  
+      `<div class="dish"><span>${n}</span><span class="price">₹${p}</span></div>`  
+    ).join('');  
+    det.innerHTML = `  
+      <summary>  
+        <span class="course-num">${num}</span>  
+        <span class="course-title">${c.title}</span>  
+        <span class="course-arrow">+</span>  
+      </summary>  
+      <div class="course-body"><div class="dish-grid">${dishesHTML}</div></div>`;  
+    wrap.appendChild(det);  
+  });  
+  
+  // scatter turmeric seeds on the leaf graphic  
+  const leaf = document.querySelector('.leaf');  
+  if (leaf) {  
+    const positions = [[30,30],[55,45],[40,60],[65,25],[25,55]];  
+    positions.forEach(([x,y]) => {  
+      const s = document.createElement('div');  
+      s.className = 'seed';  
+      s.style.left = x + '%';  
+      s.style.top = y + '%';  
+      leaf.appendChild(s);  
+    });  
+  }  
+</script>  </body>  
+</html> 
